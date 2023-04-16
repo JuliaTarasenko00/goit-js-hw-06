@@ -8,6 +8,7 @@ const divBoxes = document.querySelector('#boxes');
 const btnCreate = document.querySelector('[data-create]');
 const btnDestroy = document.querySelector('[data-destroy]');
 let size = 30;
+const items = []; 
 function createBoxes(amount){
  for(let i = 0; i < amount; i += 1){
  const box = document.createElement("div");
@@ -15,17 +16,18 @@ function createBoxes(amount){
   box.style.height = `${size}px`;
   box.style.background = getRandomHexColor();
   size += 10;
-  divBoxes.append(box);
+  items.push(box); 
 }
+divBoxes.append(...items);
 }
 function destroyBoxes() {
     divBoxes.innerHTML = '';
+    size = 30;
   }
   btnCreate.addEventListener('click', () => {
-        createBoxes();
+         createBoxes(2);
       }); 
   btnDestroy.addEventListener('click', () => {
     destroyBoxes();
   });
 
-console.log(createBoxes(4));

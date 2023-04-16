@@ -10,8 +10,10 @@ const elements = {
 }
 if(elements.password.value === '' || elements.login.value === ''){
 alert('Введіть login та password :)')
-}
-console.log(`Login: ${elements.login.value }, Password: ${elements.password.value}`);
+} else {
+  console.log(`Login: ${elements.login.value }, Password: ${elements.password.value}`);
   ev.currentTarget.reset();
- 
+}
+
+
 }
