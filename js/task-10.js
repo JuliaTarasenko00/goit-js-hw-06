@@ -16,27 +16,16 @@ function createBoxes(amount){
   box.style.background = getRandomHexColor();
   size += 10;
   divBoxes.append(box);
-  btnCreate.addEventListener('click', onClickCreate);
-  btnDestroy.addEventListener('click', onClickDestroy);
-   function onClickCreate() {
-    if(size === 500){
-        return
-    }
-   size += 10;
-   box.style.width = `${size}px`;
-   box.style.height = `${size}px`;
-  }
-  function onClickDestroy(){
-    if(size === 30){
-        return
-    }
-     size -= 10;
- box.style.width = `${size}px`;
- box.style.height = `${size}px`; 
-  }
 }
 }
-// function destroyBoxes() {
-//     boxesContainer.innerHTML = '';
-//   }
+function destroyBoxes() {
+    divBoxes.innerHTML = '';
+  }
+  btnCreate.addEventListener('click', () => {
+        createBoxes();
+      }); 
+  btnDestroy.addEventListener('click', () => {
+    destroyBoxes();
+  });
+
 console.log(createBoxes(4));
